@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by wjc133
@@ -17,14 +18,18 @@ public class Sticky {
     private String id;
     @Field("uid")
     private Long uid;
-    @Field("content")
-    private Content content;
+    @Field("title")
+    private String title;
+    @Field("contents")
+    private List<Content> contents;
     @Field("ctime")
     private Date createTime;
     @Field("utime")
     private Date updateTime;
     @Field("cover_url")
     private String coverUrl;
+    @Field("valid")
+    private int valid;
 
     public String getId() {
         return id;
@@ -42,12 +47,12 @@ public class Sticky {
         this.uid = uid;
     }
 
-    public Content getContent() {
-        return content;
+    public List<Content> getContents() {
+        return contents;
     }
 
-    public void setContent(Content content) {
-        this.content = content;
+    public void setContents(List<Content> content) {
+        this.contents = content;
     }
 
     public Date getCreateTime() {
@@ -74,15 +79,33 @@ public class Sticky {
         this.coverUrl = coverUrl;
     }
 
+    public int getValid() {
+        return valid;
+    }
+
+    public void setValid(int valid) {
+        this.valid = valid;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     @Override
     public String toString() {
         return "Sticky{" +
                 "id='" + id + '\'' +
                 ", uid=" + uid +
-                ", content=" + content +
+                ", title='" + title + '\'' +
+                ", contents=" + contents +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
                 ", coverUrl='" + coverUrl + '\'' +
+                ", valid=" + valid +
                 '}';
     }
 }

@@ -1,30 +1,30 @@
 package com.elite.blist.domain;
 
-import org.springframework.data.mongodb.core.mapping.Field;
-
-import java.util.Date;
-
 /**
  * Created by wjc133
- * Date: 2016/3/18
- * Time: 23:31
+ * Date: 2016/3/19
+ * Time: 11:28
  */
-public class Content {
-    @Field("checked")
-    private boolean checked;
-    @Field("type")
+public class ContentVo {
+    private Boolean checked;
+    private String msg;
     private Byte type;
-    @Field("keyword")
     private String keyword;
-    @Field("msg")
-    private String message;
 
-    public boolean isChecked() {
+    public Boolean getChecked() {
         return checked;
     }
 
-    public void setChecked(boolean checked) {
+    public void setChecked(Boolean checked) {
         this.checked = checked;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
     public Byte getType() {
@@ -43,21 +43,13 @@ public class Content {
         this.keyword = keyword;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
     @Override
     public String toString() {
-        return "Content{" +
+        return "ContentVo{" +
                 "checked=" + checked +
+                ", msg='" + msg + '\'' +
                 ", type=" + type +
                 ", keyword='" + keyword + '\'' +
-                ", message='" + message + '\'' +
                 '}';
     }
 }
