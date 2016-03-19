@@ -12,6 +12,7 @@ public class StickyVo {
     private Long uid;
     private String title;
     private Date lastModify;
+    private String coverUrl;
     private List<ContentVo> messages;
 
     public Long getUid() {
@@ -46,12 +47,21 @@ public class StickyVo {
         this.messages = messages;
     }
 
+    public String getCoverUrl() {
+        return coverUrl;
+    }
+
+    public void setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+    }
+
     @Override
     public String toString() {
         return "StickyVo{" +
                 "uid=" + uid +
                 ", title='" + title + '\'' +
                 ", lastModify=" + lastModify +
+                ", coverUrl='" + coverUrl + '\'' +
                 ", messages=" + messages +
                 '}';
     }

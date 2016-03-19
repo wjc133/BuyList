@@ -36,8 +36,9 @@ public class StickyService {
             content.setType(getType(message.getMsg()));
             contents.add(content);
         }
+        Date date = new Date();
         Sticky sticky = new StickyBuilder().uid(uid).title(title)
-                .ctime(new Date()).utime(new Date()).coverUrl("")
+                .ctime(date).utime(date).coverUrl("")
                 .contents(contents).build();
         Sticky result = stickyStore.store(sticky);
         return stickyMap.poToVo(result);
