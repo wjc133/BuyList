@@ -21,7 +21,7 @@ import java.util.List;
  * Time: 23:49
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("/list")
 public class StickyController {
     @Autowired
     private StickyService stickyService;
@@ -38,7 +38,7 @@ public class StickyController {
         return stickyService.saveSticky(uid, command.getTitle(), command.getMessages());
     }
 
-    @RequestMapping(value = "sticky", method = RequestMethod.GET)
+    @RequestMapping(value = "stickys", method = RequestMethod.GET)
     @ResponseBody
     public List<StickyVo> getStickys(String ticket, Integer limit, Integer offset) {
         LOG.info("getSticky invoked... ticket={}, limit={}, offset={}", ticket, limit, offset);

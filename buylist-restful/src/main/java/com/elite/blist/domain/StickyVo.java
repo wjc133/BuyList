@@ -9,11 +9,20 @@ import java.util.List;
  * Time: 11:09
  */
 public class StickyVo {
+    private String id;
     private Long uid;
     private String title;
     private Date lastModify;
     private String coverUrl;
     private List<ContentVo> messages;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public Long getUid() {
         return uid;
@@ -58,7 +67,8 @@ public class StickyVo {
     @Override
     public String toString() {
         return "StickyVo{" +
-                "uid=" + uid +
+                "id='" + id + '\'' +
+                ", uid=" + uid +
                 ", title='" + title + '\'' +
                 ", lastModify=" + lastModify +
                 ", coverUrl='" + coverUrl + '\'' +
